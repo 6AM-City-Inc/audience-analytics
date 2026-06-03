@@ -14,19 +14,20 @@
   z-index: 1;
 }
 
-
 .sixam-embed *,
 .fiveam-embed * {
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
 
-/* Card Container */
+/* Card Container — horizontal layout */
 .sixam-embed .analytics-sixam-card,
 .fiveam-embed .analytics-sixam-card {
-  max-width: 500px;
+  max-width: 600px;
   margin: 2rem auto;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
   padding: 1.5rem;
   border-radius: 16px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
@@ -35,37 +36,49 @@
   font-size: 16px;
 }
 
+/* Left column — identity */
+.sixam-embed .card-left,
+.fiveam-embed .card-left {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-width: 150px;
+}
+
+/* Right column — data */
+.sixam-embed .card-right,
+.fiveam-embed .card-right {
+  flex: 1;
+  min-width: 0;
+  border-left: 1px solid #eee;
+  padding-left: 1.5rem;
+}
+
 /* Logo */
 .sixam-embed img.analyticslogo,
 .fiveam-embed img.analyticslogo {
   width: 80px;
   height: 80px;
   object-fit: contain;
-  margin: 0 auto 1rem auto;
+  margin: 0 auto 0.75rem auto;
   display: block;
 }
 
 /* Headings & Text */
 .sixam-embed .analytics-city-name,
 .fiveam-embed .analytics-city-name {
-  font-size: 20px;
+  font-size: 18px;
   color: #232323;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.2rem;
   font-weight: 700;
-}
-
-.sixam-embed p,
-.fiveam-embed p {
-  font-size: 1rem;
-  /* or 16px */
-  margin: 0 0 1rem 0;
-  line-height: 1.5;
 }
 
 .sixam-embed .analytics-launch-date,
 .fiveam-embed .analytics-launch-date {
-  font-size: 16px;
-  color: #232323;
+  font-size: 13px;
+  color: #888;
   margin-bottom: 1rem;
 }
 
@@ -76,11 +89,11 @@
   background-color: #333;
   color: white;
   text-decoration: none;
-  font-weight: bold;
-  padding: 10px 20px;
+  font-weight: 600;
+  font-size: 13px;
+  padding: 8px 18px;
   border-radius: 8px;
-  margin-bottom: 1.5rem;
-  transition: background-color 0.2s ease;
+  transition: opacity 0.2s ease;
 }
 
 .sixam-embed a.analytics-cta-button:hover,
@@ -88,90 +101,91 @@
   opacity: 0.9;
 }
 
-/* Audience Box */
-.sixam-embed .audience-box,
-.fiveam-embed .audience-box {
-  border: 2px solid #ccc;
-  border-radius: 12px;
-  padding: 1rem;
-  text-align: left;
-  margin-bottom: 1rem;
-}
-
-/* Title */
-.sixam-embed .audience-title,
-.fiveam-embed .audience-title {
-  font-size: 20px;
-  font-weight: 700;
-  text-align: center;
-  border-bottom: 2px solid #ccc;
-  padding-bottom: 0.3rem;
-  margin-bottom: 1rem;
-}
-
-/* Columns */
-.sixam-embed .audience-columns,
-.fiveam-embed .audience-columns {
+/* Total Audience */
+.sixam-embed .audience-total,
+.fiveam-embed .audience-total {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 48px;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 0.6rem;
 }
 
-.sixam-embed .audience-section,
-.fiveam-embed .audience-section {
-  flex: 1 1 180px;
-  min-width: 150px;
-  max-width: 220px;
-  text-align: left;
-  word-wrap: break-word;
+.sixam-embed .audience-total-value,
+.fiveam-embed .audience-total-value {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.2;
+  white-space: nowrap;
 }
 
-.sixam-embed .audience-section h4,
-.fiveam-embed .audience-section h4 {
-  font-size: 18px;
-  margin-bottom: 0.5rem;
-  color: #232323;
-}
-
-.sixam-embed .analytics-label,
-.fiveam-embed .analytics-label {
-  font-size: 16px;
-  font-weight: 500;
-  color: #333;
-}
-
-.sixam-embed .analytics-value,
-.fiveam-embed .analytics-value {
-  font-size: 16px;
+.sixam-embed .audience-total-label,
+.fiveam-embed .audience-total-label {
+  font-size: 17px;
   font-weight: 600;
-  display: block;
-  margin-top: 0.15rem;
-  line-height: 1.4;
 }
+
+/* Metric rows */
+.sixam-embed .audience-metrics,
+.fiveam-embed .audience-metrics {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sixam-embed .audience-metric,
+.fiveam-embed .audience-metric {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f7f8fa;
+  border-radius: 8px;
+  padding: 0.55rem 0.75rem;
+}
+
+.sixam-embed .audience-metric-icon,
+.fiveam-embed .audience-metric-icon {
+  flex-shrink: 0;
+  line-height: 0;
+  display: flex;
+  align-items: center;
+}
+
+.sixam-embed .audience-metric-icon svg,
+.fiveam-embed .audience-metric-icon svg {
+  display: block;
+}
+
+.sixam-embed .audience-metric-value,
+.fiveam-embed .audience-metric-value {
+  font-size: 17px;
+  font-weight: 700;
+  color: #232323;
+  white-space: nowrap;
+}
+
+.sixam-embed .audience-metric-label,
+.fiveam-embed .audience-metric-label {
+  font-size: 12px;
+  color: #777;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
 
 /* ========================
    Color Themes (by class)
    ======================== */
 
-.sixam-embed .theme-green .audience-box,
-.fiveam-embed .theme-green .audience-box {
-  border-color: #52bc26;
-}
-
 .sixam-embed .theme-green .analytics-cta-button,
 .fiveam-embed .theme-green .analytics-cta-button {
-  background-color: #52bc26;
+  background-color: #46a822;
 }
 
-.sixam-embed .theme-green .audience-title,
-.fiveam-embed .theme-green .audience-title {
-  color: #52bc26;
-}
-
-.sixam-embed .theme-blue .audience-box,
-.fiveam-embed .theme-blue .audience-box {
-  border-color: #2f95d3;
+.sixam-embed .theme-green .audience-total-value,
+.sixam-embed .theme-green .audience-total-label,
+.fiveam-embed .theme-green .audience-total-value,
+.fiveam-embed .theme-green .audience-total-label {
+  color: #46a822;
 }
 
 .sixam-embed .theme-blue .analytics-cta-button,
@@ -179,14 +193,11 @@
   background-color: #2f95d3;
 }
 
-.sixam-embed .theme-blue .audience-title,
-.fiveam-embed .theme-blue .audience-title {
+.sixam-embed .theme-blue .audience-total-value,
+.sixam-embed .theme-blue .audience-total-label,
+.fiveam-embed .theme-blue .audience-total-value,
+.fiveam-embed .theme-blue .audience-total-label {
   color: #2f95d3;
-}
-
-.sixam-embed .theme-red .audience-box,
-.fiveam-embed .theme-red .audience-box {
-  border-color: #f44747;
 }
 
 .sixam-embed .theme-red .analytics-cta-button,
@@ -194,14 +205,11 @@
   background-color: #f44747;
 }
 
-.sixam-embed .theme-red .audience-title,
-.fiveam-embed .theme-red .audience-title {
+.sixam-embed .theme-red .audience-total-value,
+.sixam-embed .theme-red .audience-total-label,
+.fiveam-embed .theme-red .audience-total-value,
+.fiveam-embed .theme-red .audience-total-label {
   color: #f44747;
-}
-
-.sixam-embed .theme-purple .audience-box,
-.fiveam-embed .theme-purple .audience-box {
-  border-color: #7546d1;
 }
 
 .sixam-embed .theme-purple .analytics-cta-button,
@@ -209,29 +217,23 @@
   background-color: #7546d1;
 }
 
-.sixam-embed .theme-purple .audience-title,
-.fiveam-embed .theme-purple .audience-title {
+.sixam-embed .theme-purple .audience-total-value,
+.sixam-embed .theme-purple .audience-total-label,
+.fiveam-embed .theme-purple .audience-total-value,
+.fiveam-embed .theme-purple .audience-total-label {
   color: #7546d1;
-}
-
-.sixam-embed .theme-orange .audience-box,
-.fiveam-embed .theme-orange .audience-box {
-  border-color: #f77911;
 }
 
 .sixam-embed .theme-orange .analytics-cta-button,
 .fiveam-embed .theme-orange .analytics-cta-button {
-  background-color: #f77911;
+  background-color: #e57210;
 }
 
-.sixam-embed .theme-orange .audience-title,
-.fiveam-embed .theme-orange .audience-title {
-  color: #f77911;
-}
-
-.sixam-embed .theme-6am-purple .audience-box,
-.fiveam-embed .theme-6am-purple .audience-box {
-  border-color: #3b3470;
+.sixam-embed .theme-orange .audience-total-value,
+.sixam-embed .theme-orange .audience-total-label,
+.fiveam-embed .theme-orange .audience-total-value,
+.fiveam-embed .theme-orange .audience-total-label {
+  color: #e57210;
 }
 
 .sixam-embed .theme-6am-purple .analytics-cta-button,
@@ -239,31 +241,103 @@
   background-color: #3b3470;
 }
 
-.sixam-embed .theme-6am-purple .audience-title,
-.fiveam-embed .theme-6am-purple .audience-title {
+.sixam-embed .theme-6am-purple .audience-total-value,
+.sixam-embed .theme-6am-purple .audience-total-label,
+.fiveam-embed .theme-6am-purple .audience-total-value,
+.fiveam-embed .theme-6am-purple .audience-total-label {
   color: #3b3470;
 }
 
+/* Compact card — 5AM single-metric layout */
+.sixam-embed .analytics-compact,
+.fiveam-embed .analytics-compact {
+  display: block;
+  text-align: center;
+  max-width: 360px;
+}
 
-@media (max-width: 480px) {
+.sixam-embed .analytics-compact .analytics-launch-date,
+.fiveam-embed .analytics-compact .analytics-launch-date {
+  margin-bottom: 0.75rem;
+}
 
-  .audience-column {
-    justify-content: left;
+.sixam-embed .compact-metric,
+.fiveam-embed .compact-metric {
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+/* Styled Tooltips */
+.sixam-embed .audience-metric-label[data-tooltip],
+.fiveam-embed .audience-metric-label[data-tooltip] {
+  position: relative;
+  cursor: help;
+  border-bottom: 1px dotted #bbb;
+}
+
+.sixam-embed .audience-metric-label[data-tooltip]::after,
+.fiveam-embed .audience-metric-label[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 0;
+  background: #2a2a2a;
+  color: #fff;
+  padding: 7px 11px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.45;
+  white-space: normal;
+  width: max-content;
+  max-width: 220px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+  z-index: 10;
+}
+
+.sixam-embed .audience-metric-label[data-tooltip]::before,
+.fiveam-embed .audience-metric-label[data-tooltip]::before {
+  content: '';
+  position: absolute;
+  bottom: calc(100% + 2px);
+  left: 14px;
+  border: 5px solid transparent;
+  border-top-color: #2a2a2a;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+  z-index: 10;
+}
+
+.sixam-embed .audience-metric-label[data-tooltip]:hover::after,
+.sixam-embed .audience-metric-label[data-tooltip]:hover::before,
+.fiveam-embed .audience-metric-label[data-tooltip]:hover::after,
+.fiveam-embed .audience-metric-label[data-tooltip]:hover::before {
+  opacity: 1;
+}
+
+/* Responsive — stack vertically on narrow screens */
+@media (max-width: 540px) {
+  .sixam-embed .analytics-sixam-card,
+  .fiveam-embed .analytics-sixam-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.25rem 1rem;
   }
 
-  .audience-section h4 {
-    font-size: 1rem;
+  .sixam-embed .card-left,
+  .fiveam-embed .card-left {
+    min-width: unset;
   }
 
-  .analytics-label {
-    font-size: 0.9rem;
-  }
-
-  .analytics-value {
-    font-size: 1rem;
-  }
-
-  .audience-box {
-    padding: 0.8rem;
+  .sixam-embed .card-right,
+  .fiveam-embed .card-right {
+    width: 100%;
+    border-left: none;
+    padding-left: 0;
+    border-top: 1px solid #eee;
+    padding-top: 1rem;
   }
 }
