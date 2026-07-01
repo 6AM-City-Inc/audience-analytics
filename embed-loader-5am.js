@@ -10,7 +10,7 @@
   // Load CSS
   const style = document.createElement('link');
   style.rel = 'stylesheet';
-  style.href = 'https://starmencarnes.github.io/audience-analytics/style.css';
+  style.href = 'https://6am-city-inc.github.io/audience-analytics/style.css';
   head.appendChild(style);
 
   // Wait until DOM is ready
@@ -19,7 +19,7 @@
   }
 
   // Fetch 5am-data.csv to get market list
-  const response = await fetch('https://starmencarnes.github.io/audience-analytics/5am-data.csv');
+  const response = await fetch('https://6am-city-inc.github.io/audience-analytics/5am-data.csv');
   const text = await response.text();
   const rows = text.trim().split('\n').slice(1); // Skip header
 
@@ -52,7 +52,7 @@
 
   // Load embed-5am.js last
   const script = document.createElement('script');
-  script.src = 'https://starmencarnes.github.io/audience-analytics/embed-5am.js';
+  script.src = 'https://6am-city-inc.github.io/audience-analytics/embed-5am.js';
   script.defer = true;
   head.appendChild(script);
 })();

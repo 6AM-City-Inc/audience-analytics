@@ -5,8 +5,8 @@
   console.log("Attempting to load meta.json and data.csv...");
 
   const [metaJson, dataText] = await Promise.all([
-    fetch('https://starmencarnes.github.io/audience-analytics/meta.json').then(r => r.json()),
-    fetch('https://starmencarnes.github.io/audience-analytics/data.csv').then(r => r.text())
+    fetch('https://6am-city-inc.github.io/audience-analytics/meta.json').then(r => r.json()),
+    fetch('https://6am-city-inc.github.io/audience-analytics/data.csv').then(r => r.text())
   ]);
 
   console.log("Loaded meta.json:", metaJson.slice(0, 1));
@@ -69,7 +69,7 @@
     card.id = mkt;
     card.innerHTML = `
       <div class="card-left">
-        <img class="analyticslogo" src="https://starmencarnes.github.io/audience-analytics/logos/${mkt}_PrimaryColor-Transparent-1000x1000.png" alt="${mkt} logo" />
+        <img class="analyticslogo" src="https://6am-city-inc.github.io/audience-analytics/logos/${mkt}_PrimaryColor-Transparent-1000x1000.png" alt="${mkt} logo" />
         <div class="analytics-city-name">${meta['City Name']}</div>
         <div class="analytics-launch-date">Launched ${meta['Launch Date']}</div>
         <a href="${meta['Audience Profile URL']}" target="_blank" class="analytics-cta-button">Audience Profile</a>

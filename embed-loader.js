@@ -10,7 +10,7 @@
   // Load CSS
   const style = document.createElement('link');
   style.rel = 'stylesheet';
-  style.href = 'https://starmencarnes.github.io/audience-analytics/style.css';
+  style.href = 'https://6am-city-inc.github.io/audience-analytics/style.css';
   head.appendChild(style);
 
   // Wait until DOM is ready
@@ -20,8 +20,8 @@
 
   // Fetch both data.csv and meta.json to filter out 6am-purple markets
   const [dataText, metaJson] = await Promise.all([
-    fetch('https://starmencarnes.github.io/audience-analytics/data.csv').then(r => r.text()),
-    fetch('https://starmencarnes.github.io/audience-analytics/meta.json').then(r => r.json())
+    fetch('https://6am-city-inc.github.io/audience-analytics/data.csv').then(r => r.text()),
+    fetch('https://6am-city-inc.github.io/audience-analytics/meta.json').then(r => r.json())
   ]);
 
   const rows = dataText.trim().split('\n').slice(1); // Skip header
@@ -58,7 +58,7 @@
 
   // Load embed.js last
   const script = document.createElement('script');
-  script.src = 'https://starmencarnes.github.io/audience-analytics/embed.js';
+  script.src = 'https://6am-city-inc.github.io/audience-analytics/embed.js';
   script.defer = true;
   head.appendChild(script);
 })();
